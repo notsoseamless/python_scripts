@@ -1,13 +1,4 @@
 #! /usr/bin/env python
-########################################################################
-#                    Delphi Diesel Systems
-#*
-#*                   This document is the property of
-#*                   Delphi Diesel Systems
-#*                   It must not be copied (in whole or in part)
-#*                   or disclosed without prior written consent
-#*                   of the company. Any copies by any method
-#*                   must also include a copy of this legend.
 #######################################################################
 #
 # Description: Script makes start up faster
