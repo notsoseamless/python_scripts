@@ -1,0 +1,74 @@
+T55 Duplicate Checker Version : 1.0.1.0
+Duplicate List - 
+
+64 duplicates found - 18 entries are identical, 46 entries have differences
+
+Identifier	File Name	Entries Identical?	
+
+APP_NUMBER_OF_ACCEL_CPV	app.t55 - Line 4, i_c_accel_strategy_dd.t55 - Line 864	Yes	None	
+DTI_AC_COMPRESSOR_DELAY_APV	application.t55 - Line 540, dti_iso.t55 - Line 89	No	Very High	
+DTI_AC_COMPRESSOR_PERIOD_APV	application.t55 - Line 541, dti_iso.t55 - Line 99	No	Very High	
+DTI_CONTROL_OUTPUT_CONFIG_TAB	application.t55 - Line 542, dti_iso.t55 - Line 42	No	Very High	
+DTI_CU_AND_ACT_RELAY_DELAY_APV	application.t55 - Line 543, dti_iso.t55 - Line 69	No	Very High	
+DTI_EGR_COOLER_BYPASS_DELAY_APV	application.t55 - Line 545, dti_iso.t55 - Line 82	No	Very High	
+DTI_EGR_COOLER_BYPASS_PERIOD_APV	application.t55 - Line 544, dti_iso.t55 - Line 113	No	Low	
+DTI_EGR_VALVE_DRIVE_DELAY_APV	application.t55 - Line 546, dti_iso.t55 - Line 95	No	Very High	
+DTI_EMLC_RELAY_DELAY_APV	application.t55 - Line 549, dti_iso.t55 - Line 85	No	Very High	
+DTI_GLOW_PLUG_DELAY_APV	application.t55 - Line 882, dti_iso.t55 - Line 83	No	Very High	
+DTI_GMV2_DELAY_APV	application.t55 - Line 557, dti_iso.t55 - Line 72	No	Very High	
+DTI_HEATER_DELAY_APV	application.t55 - Line 558, dti_iso.t55 - Line 75	No	Very High	
+DTI_HP_DELAY_APV	application.t55 - Line 559, dti_iso.t55 - Line 86	No	Very High	
+DTI_INJ_DIAG_DELAY_APV	application.t55 - Line 568, dti_iso.t55 - Line 77	No	Very High	
+DTI_LAMP_DELAY_APV	application.t55 - Line 870, dti_iso.t55 - Line 90	No	Very High	
+DTI_LIFT_PUMP_DELAY_APV	application.t55 - Line 871, dti_iso.t55 - Line 92	No	Very High	
+DTI_LIFT_PUMP_DMND_APV	application.t55 - Line 10480, dti.t55 - Line 286	No	Very High	
+DTI_LIFT_PUMP_SUBM_APV	application.t55 - Line 10481, dti.t55 - Line 589	No	Very High	
+DTI_MDP_MAP_UPD_MODE_TYPE	dti.t55 - Line 4, dti.t55 - Line 17	No	Very Low	
+DTI_MDP_OPEN_LOOP_ACTIVE_TYPE	dti.t55 - Line 5, dti.t55 - Line 136	Yes	None	
+DTI_NULL_DELAY_APV	application.t55 - Line 874, dti_iso.t55 - Line 74	No	Very High	
+DTI_STARTER_RELAY_DELAY_APV	application.t55 - Line 876, dti_iso.t55 - Line 94	No	Very High	
+DTI_Starter_sw_mem_rst_subm	application.t55 - Line 9935, dti.t55 - Line 509	No	Low	
+DTI_SWIRL_DELAY_APV	application.t55 - Line 877, dti_iso.t55 - Line 73	No	Very High	
+DTI_THROTTLE_DELAY_APV	application.t55 - Line 878, dti_iso.t55 - Line 76	No	Very High	
+DTI_VGT_PERIOD_APV	application.t55 - Line 880, dti_iso.t55 - Line 103	Yes	None	
+DTI_WRAF_HEATER_MODE_DELAY_APV	application.t55 - Line 881, dti_iso.t55 - Line 70	No	Very High	
+F_M_CC_CAN_FLT_CFG	application.t55 - Line 9469, F_M_Fault.t55 - Line 473	No	Low	
+F_M_CC_ECU_FLT_CFG	application.t55 - Line 9470, F_M_Fault.t55 - Line 474	No	Low	
+F_M_HPV_DRIVE_FLT_CFG	application.t55 - Line 9208, F_M_Fault.t55 - Line 262	No	Low	
+F_M_IMV_DRIVE_FLT_CFG	application.t55 - Line 9209, F_M_Fault.t55 - Line 515	No	Low	
+F_M_Lift_pump_flt_grp_flag	application.t55 - Line 10527, F_M_Fault.t55 - Line 12486	No	Low	
+F_M_Lift_pump_flt_grp_rec	application.t55 - Line 10525, F_M_Fault.t55 - Line 12613	No	Low	
+F_M_LIFT_PUMP_GRP_FLT_APV	application.t55 - Line 10526, F_M_Fault.t55 - Line 12994	No	Low	
+F_M_NUMBER_OF_FAULTTYPE_CPV	application.t55 - Line 2033, F_M_Fault.t55 - Line 110	No	Low	
+F_M_THRTL_POS_LEARN_FLT_CFG	application.t55 - Line 9844, F_M_Fault.t55 - Line 557	No	Low	
+F_M_VEXT1_FLT_CFG	application.t55 - Line 9391, F_M_Fault.t55 - Line 564	No	Low	
+F_M_VEXT2_FLT_CFG	application.t55 - Line 9390, F_M_Fault.t55 - Line 565	No	Low	
+F_M_VEXT2AUX_FLT_CFG	application.t55 - Line 9392, F_M_Fault.t55 - Line 566	No	Low	
+fault_rec	application.t55 - Line 2064, F_M_Fault.t55 - Line 199	No	Low	
+fault_soft	application.t55 - Line 2065, F_M_Fault.t55 - Line 200	No	Low	
+I_C_ACC_NUMBER_MDP_ZONE_CPV	app.t55 - Line 5, i_c_accel_strategy_dd.t55 - Line 850	No	Very High	
+IN_Agb_pn_switch_in_park_neutral	application.t55 - Line 6625, icv_calc_agb_output_dd.t55 - Line 12	No	Very High	
+IN_Agb_torq_conv_locked	application.t55 - Line 6624, icv_calc_agb_output_dd.t55 - Line 4	No	Very High	
+IN_Agb_torq_conv_turbine_speed	application.t55 - Line 6623, icv_calc_agb_output_dd.t55 - Line 3	No	Very High	
+IN_Oil_temperature	application.t55 - Line 9706, icv_oil_temp_dd.t55 - Line 2	No	Very High	
+P_L_Cc_Source_address_blocked	application.t55 - Line 10609, application.t55 - Line 10774	Yes	None	
+P_L_J1939_CCVS_DIAG_ENABLED_APV	application.t55 - Line 5058, application.t55 - Line 10735	Yes	None	
+P_L_J1939_CCVS_TIMEOUT_APV	application.t55 - Line 10606, application.t55 - Line 10771	Yes	None	
+P_L_J1939_crs_accel_sig_valid	application.t55 - Line 4933, application.t55 - Line 10730	Yes	None	
+P_L_J1939_crs_decel_sig_valid	application.t55 - Line 4935, application.t55 - Line 10732	Yes	None	
+P_L_J1939_crs_resm_sig_valid	application.t55 - Line 4934, application.t55 - Line 10731	Yes	None	
+P_L_J1939_cruise_accel_state	application.t55 - Line 10613, application.t55 - Line 10806	Yes	None	
+P_L_J1939_cruise_decel_state	application.t55 - Line 10611, application.t55 - Line 10804	Yes	None	
+P_L_J1939_cruise_resume_state	application.t55 - Line 10624, application.t55 - Line 10786	Yes	None	
+P_L_J1939_oil_level_trigger	application.t55 - Line 10626, application.t55 - Line 10818	Yes	None	
+P_L_J1939_OIL_LEVEL_TRIGGER_TIME_APV	application.t55 - Line 10603, application.t55 - Line 10765	Yes	None	
+P_L_J1939_Pdu238_Rx_Config	application.t55 - Line 9739, application.t55 - Line 10783	Yes	None	
+P_L_J1939_vehicle_speed	application.t55 - Line 4937, application.t55 - Line 10727	No	Very High	
+P_L_J1939_vehicle_speed_valid	application.t55 - Line 4938, application.t55 - Line 10728	Yes	None	
+READ	application.t55 - Line 7997, F_M_Fault.t55 - Line 27	No	Very High	
+SMC_Energise_actuator_relay	application.t55 - Line 8867, application.t55 - Line 8880	Yes	None	
+SMC_Energise_cu_relay	application.t55 - Line 8866, application.t55 - Line 8879	Yes	None	
+T_D_Percentage_torque	application.t55 - Line 10607, t_d_j1939_output_dd.t55 - Line 4	No	Very High	
+
+T55 Errors
+
