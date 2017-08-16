@@ -173,10 +173,11 @@ class Month:
         self.page_buffer.append('\\setcounter{calendardate}{1} % Start the date counter at 1')
         self.page_buffer.append('')
         space = self.get_spacing()
-        for day in range(self.num_days):
+        # offset by one as days start at 1
+        for day in range(1, self.num_days + 1):
             insert_info = str(self.occ.get(self.month, day))[2:-2]
             print insert_info
-            self.page_buffer.append('\\day{}{\\vspace{' + space + '}' + str(insert_info) + '} % ' + str(day + 1))
+            self.page_buffer.append('\\day{}{\\vspace{' + space + '}' + str(insert_info) + '} % ' + str(day))
         self.page_buffer.append('')    
         self.page_buffer.append('% Un-comment the \BlankDay below if the bottom line of the calendar is missing')
         self.page_buffer.append('\\BlankDay')
@@ -205,6 +206,7 @@ class Month:
 
         #print str(self.year) + '  '  +  str( self.month)  +  '  ' + str((self.c.month(self.year, self.month)).count('\n') - 2)
 
+        # this is a bodge to keep formatting in line - need to fix later.
         if 6 == (self.c.month(self.year, self.month).count('\n') - 2):
             return '2.0cm'
         else:
@@ -225,6 +227,7 @@ class occurances:
 
     def build_birthdays(self):
         ''' builds birthdays '''
+        self.birthdays.append({'month':'1' , 'day':'1' , 'name':'Nobody', 'year':1985})
         self.birthdays.append({'month':'4' , 'day':'14', 'name':'Mark'  , 'year':1985})
         self.birthdays.append({'month':'4' , 'day':'28', 'name':'Sue'   , 'year':1956})
         self.birthdays.append({'month':'4' , 'day':'28', 'name':'Mia'   , 'year':2010})
@@ -236,7 +239,8 @@ class occurances:
             
     def build_aniversaries(self):
         ''' builds aniversaries '''
-        self.aniversaries.append({'month':'4', 'day':'28', 'name':'Janet and Dave' , 'year':1987})
+        self.aniversaries.append({'month':'4', 'day':'28', 'name':'Test Anniv' , 'year':1981})
+        self.aniversaries.append({'month':'4', 'day':'28', 'name':'Test2 Anniv' , 'year':0})
         self.aniversaries.append({'month':'8', 'day':'18', 'name':'Janet and Dave' , 'year':1987})
 
     def build_appointment(self):
