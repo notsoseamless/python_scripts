@@ -1,5 +1,4 @@
 '''
-   
    calender generator
 
    Script to generate a year calendar
@@ -12,8 +11,6 @@
 import time
 import datetime as dt
 import calendar
-import matplotlib.pyplot as plt
-import numpy as np
 import xml.etree.ElementTree as ET
 import re
 
@@ -46,7 +43,7 @@ def main():
     year.draw()
     year.output()
 
-    # calculate module run time 
+    # calculate module run time
     print 'Run time was ' + str(time.clock() - start) + ' seconds.'
 
 
@@ -58,10 +55,10 @@ def write_to_file(src_list):
     try:
         file_ptr = open(OUT_FILE, 'w')
     except IOError:
-        print 'failed to open ' + OUT_FILE 
+        print 'failed to open ' + OUT_FILE
         sys.exit()
     for line in src_list:
-        file_ptr.write(line )
+        file_ptr.write(line)
     file_ptr.close()
 
 
@@ -71,20 +68,20 @@ def append_to_file(src_list):
     try:
         file_ptr = open(OUT_FILE, 'a')
     except IOError:
-        print 'failed to open ' + OUT_FILE 
+        print 'failed to open ' + OUT_FILE
         sys.exit()
     for line in src_list:
-        file_ptr.write(line )
+        file_ptr.write(line)
     file_ptr.close()
 
 
 class Year:
     ''' represents a year object '''
 
-    def __init__(self, year, StartingDayNumber):
+    def __init__(self, year, starting_day_number):
         ''' init function '''
         self.year = year
-        self.StartingDayNumber = StartingDayNumber
+        self.starting_day_number = starting_day_number
         self.header_buffer = []
         self.footer_buffer = []
         # initialise month objects
@@ -93,6 +90,7 @@ class Year:
             self.month_obs.append(Month(year, month))
 
     def draw(self):
+        '''' draw method '''
         self.create_header()
         for month in self.month_obs:
             month.draw()
@@ -106,7 +104,7 @@ class Year:
         self.header_buffer.append('\\begin{document}')
         self.header_buffer.append('\\pagestyle{empty} % Removes the page number from the bottom of the page')
         self.header_buffer.append('\\noindent')
-        self.header_buffer.append('\\StartingDayNumber=' + str(self.StartingDayNumber))
+        self.header_buffer.append('\\StartingDayNumber=' + str(self.starting_day_number))
         self.header_buffer.append('')
 
     def create_footer(self):
@@ -134,14 +132,14 @@ class Month:
         ''' init function '''
         # invoke occurances class
         self.occ = occurances()
-        # invoke calender class c
-        self.c = calendar
-        self.c.setfirstweekday(FIRST_DAY_OF_WEEK)
+        # invoke calender class calc
+        self.cal = calendar
+        self.cal.setfirstweekday(FIRST_DAY_OF_WEEK)
         # local variables
         self.year = year
         self.month = month
         self.page_buffer = []
-        self.first_day, self.num_days = self.c.monthrange(self.year, self.month)
+        self.first_day, self.num_days = self.cal.monthrange(self.year, self.month)
 
     def draw(self):
         ''' generates month data '''
@@ -178,7 +176,7 @@ class Month:
             insert_info = str(self.occ.get(self.month, day))[2:-2]
             print insert_info
             self.page_buffer.append('\\day{}{\\vspace{' + space + '}' + str(insert_info) + '} % ' + str(day))
-        self.page_buffer.append('')    
+        self.page_buffer.append('')
         self.page_buffer.append('% Un-comment the \BlankDay below if the bottom line of the calendar is missing')
         self.page_buffer.append('\\BlankDay')
         self.page_buffer.append('')
@@ -190,24 +188,24 @@ class Month:
     def blank_days(self):
         ''' calculate blank days at beginning of month table '''
         blanks = self.first_day + 1
-        #print 'first day = ' + DAYS[self.first_day] + '  blanks = ' + str(blanks) 
+        #print 'first day = ' + DAYS[self.first_day] + '  blanks = ' + str(blanks)
         if blanks >= 7:
             return blanks - 7
         else:
             return blanks
-        
+
     def output(self):
         ''' outputs month data '''
         for line in self.page_buffer:
             append_to_file(line + '\n')
 
     def get_spacing(self):
-        ''' determine what spacing we need '''      
+        ''' determine what spacing we need '''
 
         #print str(self.year) + '  '  +  str( self.month)  +  '  ' + str((self.c.month(self.year, self.month)).count('\n') - 2)
 
         # this is a bodge to keep formatting in line - need to fix later.
-        if 6 == (self.c.month(self.year, self.month).count('\n') - 2):
+        if 6 == (self.cal.month(self.year, self.month).count('\n') - 2):
             return '2.0cm'
         else:
             return '2.5cm'
@@ -227,11 +225,12 @@ class occurances:
 
     def build_birthdays(self):
         ''' builds birthdays '''
-        self.birthdays.append({'month':'1' , 'day':'1' , 'name':'Nobody', 'year':1985})
         self.birthdays.append({'month':'4' , 'day':'14', 'name':'Mark'  , 'year':1985})
         self.birthdays.append({'month':'4' , 'day':'28', 'name':'Sue'   , 'year':1956})
         self.birthdays.append({'month':'4' , 'day':'28', 'name':'Mia'   , 'year':2010})
         self.birthdays.append({'month':'8' , 'day':'12', 'name':'John'  , 'year':1954})
+        self.birthdays.append({'month':'8' , 'day':'20', 'name':'Janet' , 'year':1958})
+        self.birthdays.append({'month':'8' , 'day':'20', 'name':'Dave'  , 'year':1958})
         self.birthdays.append({'month':'9' , 'day':'26', 'name':'Mum'   , 'year':1926})
         self.birthdays.append({'month':'10', 'day':'29', 'name':'Lin'   , 'year':1947})
         self.birthdays.append({'month':'12', 'day':'11', 'name':'Freya' , 'year':2013})
@@ -239,43 +238,46 @@ class occurances:
             
     def build_aniversaries(self):
         ''' builds aniversaries '''
-        self.aniversaries.append({'month':'4', 'day':'28', 'name':'Test Anniv' , 'year':1981})
-        self.aniversaries.append({'month':'4', 'day':'28', 'name':'Test2 Anniv' , 'year':0})
-        self.aniversaries.append({'month':'8', 'day':'18', 'name':'Janet and Dave' , 'year':1987})
+        #self.aniversaries.append({'month':'7' , 'day':'27', 'name':'Mark & Mirel'   , 'year':2014})
+        #self.aniversaries.append({'month':'8' , 'day':'18', 'name':'Janet & Dave' , 'year':1987})
+        self.aniversaries.append({'month':'8' , 'day':'18', 'name':'Janet' , 'year':1987})
+        #self.aniversaries.append({'month':'9' , 'day':'26', 'name':'Dean & Same'    , 'year':2015})
 
     def build_appointment(self):
         ''' build appointments '''
-        self.appointments.append({'month':'9', 'day':'9', 'name':'John dentist 17:30'})
-        self.appointments.append({'month':'4', 'day':'28', 'name':'test'})
+        self.appointments.append({'month':'9' , 'day':'9' , 'name':'John dentist 17:30'})
+        self.appointments.append({'month':'9' , 'day':'2' , 'name':'Audax Ugley'})
+        self.appointments.append({'month':'9' , 'day':'30', 'name':'Honda Insurance'})
+        self.appointments.append({'month':'10', 'day':'7' , 'name':'Audax GtDunmow'})
+        self.appointments.append({'month':'10', 'day':'13', 'name':'Lin Spain'})
+        self.appointments.append({'month':'10', 'day':'20', 'name':'Lin Home'})
+        self.appointments.append({'month':'11', 'day':'3' , 'name':'Hong Kong'})
+        self.appointments.append({'month':'12', 'day':'1' , 'name':'Home'})
 
     def get(self, month, day):
         ''' returns occurances for day in a month '''
         results = []
-        #month_list = []
-        #day_list = []
 
         # birthdays:
-        month_list =  filter(lambda month_list: str(month) == month_list['month'],  self.birthdays)
-        day_list =    filter(lambda day_list:   str(day)   == day_list['day'],      month_list)
+        month_list = filter(lambda month_list: str(month) == month_list['month'], self.birthdays)
+        day_list =   filter(lambda day_list: str(day) == day_list['day'], month_list)
         for people in day_list:
-            results.append('B:' + people['name'] + ' (' +  str(CALENDER_YEAR - people['year']) + ')')
+            pass #results.append('B:' + people['name'] + ' (' +  str(CALENDER_YEAR - people['year']) + ')')
 
         # aniversaries:
-        month_list =  filter(lambda month_list: str(month) == month_list['month'],  self.aniversaries)
-        day_list =    filter(lambda day_list: str(day) ==  day_list['day'],  month_list)
+        month_list = filter(lambda month_list: str(month) == month_list['month'], self.aniversaries)
+        day_list =   filter(lambda day_list: str(day) == day_list['day'], month_list)
         for people in day_list:
             results.append('A:' + people['name'] + ' (' +  str(CALENDER_YEAR - people['year']) + ')')
 
         # appointments
-        month_list =  filter(lambda month_list: str(month) == month_list['month'],  self.appointments)
-        day_list =    filter(lambda day_list: str(day) ==  day_list['day'],  month_list)
+        month_list = filter(lambda month_list: str(month) == month_list['month'], self.appointments)
+        day_list =   filter(lambda day_list: str(day) == day_list['day'], month_list)
         for people in day_list:
-            results.append(people['name'])
+            pass #results.append(people['name'])
 
-        
         return results
 
-    
 
 
 if __name__ == "__main__":
