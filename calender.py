@@ -245,12 +245,12 @@ class occurances:
 
     def build_appointment(self):
         ''' build appointments '''
-        self.appointments.append({'month':'9' , 'day':'9' , 'name':'John dentist 17:30'})
         self.appointments.append({'month':'9' , 'day':'2' , 'name':'Audax Ugley'})
+        self.appointments.append({'month':'9' , 'day':'6' , 'name':'Lin Spain'})
+        self.appointments.append({'month':'9' , 'day':'15', 'name':'Lin Home'})
         self.appointments.append({'month':'9' , 'day':'30', 'name':'Honda Insurance'})
         self.appointments.append({'month':'10', 'day':'7' , 'name':'Audax GtDunmow'})
-        self.appointments.append({'month':'10', 'day':'13', 'name':'Lin Spain'})
-        self.appointments.append({'month':'10', 'day':'20', 'name':'Lin Home'})
+        self.appointments.append({'month':'10', 'day':'9' , 'name':'John dentist 17:30'})
         self.appointments.append({'month':'11', 'day':'3' , 'name':'Hong Kong'})
         self.appointments.append({'month':'12', 'day':'1' , 'name':'Home'})
 
