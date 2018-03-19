@@ -1,27 +1,9 @@
 #! /usr/bin/env python
-#######################################################################
-#
-# Description: Script makes start up faster
-#
-#              John Oldman 05/02/2014
-#
-########################################################################
-# DATE       # DESCRIPTION                                       # WHO #
-#------------#---------------------------------------------------#-----#
-# 05-02-2014 # Initial version                                   # JRO #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-########################################################################
-#
-# todo:
-# why do we keep needing to re position in coding directory
-#
-#
-#
-#
-########################################################################
+''' 
+Description: Script makes start up faster
+John Oldman 05/02/2014
+'''
+
 import sys
 import os
 import time

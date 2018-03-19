@@ -1,23 +1,9 @@
 #! /usr/bin/env python
-#######################################################################
-#
-# Description: Script hunts and distroys tabs and eol spaces
-#
-#              John Oldman 24/10/2013
-#
-########################################################################
-# DATE       # DESCRIPTION                                       # WHO #
-#------------#---------------------------------------------------#-----#
-# 25-10-2013 # Initial version                                   # JRO #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-########################################################################
-#
-# todo:
-#
-########################################################################
+'''
+Description: Script hunts and distroys tabs and eol spaces
+John Oldman 24/10/2013
+'''
+
 import sys
 import os
 import subprocess

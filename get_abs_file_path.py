@@ -1,35 +1,9 @@
 #! /usr/bin/env python
-#######################################################################
-#
-# Description: Script gets absolute file paths from file path list
-#              could have done this from the command line, but I
-#              wanted to practice my python...
-#
-#              John Oldman 31/05/2013
-#
-########################################################################
-# DATE       # DESCRIPTION                                       # WHO #
-#------------#---------------------------------------------------#-----#
-# 30-10-2013 # Initial version                                   # JRO #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-########################################################################
-#
-# todo:
-#
-#
-#
-#
-#
-########################################################################
+'''
+Test absolute file paths from file path list
+John Oldman 31/05/2013
+'''
+
 import sys
 import os
 import re

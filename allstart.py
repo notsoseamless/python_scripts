@@ -1,28 +1,9 @@
 #! /usr/bin/env python
-#######################################################################
-#
-# Description: Script makes start up faster
-#
-#              John Oldman 09/01/2014
-#
-########################################################################
-# DATE       # DESCRIPTION                                       # WHO #
-#------------#---------------------------------------------------#-----#
-# 31-05-2013 # Initial version                                   # JRO #
-# 15-10-2013 # Add logging:                                      #     #
-#            # http://docs.python.org/2/howto/logging.html       # JRO #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-#            #                                                   #     #
-########################################################################
-#
-# todo:
-# fix logging
-# fix threading
-# add timer
-#
-########################################################################
+'''
+Description: Script makes start up faster
+John Oldman 09/01/2014
+'''
+
 import sys
 import os
 import time
